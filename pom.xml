@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>chat-history</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>chat</name>
+    <name>chat-history</name>
     <description>Chat history service</description>
     <url/>
     <licenses>
@@ -57,6 +57,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>4.0.0</version>
         </dependency>
     </dependencies>
 
