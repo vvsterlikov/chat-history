@@ -1,19 +1,22 @@
 package com.example.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.*;
 
+@Builder
+@RequiredArgsConstructor
+@Getter
 @Entity
 @Table(name = "EVENT")
 public class EventEntity {
     @Id
     private Long id;
 
-    @Column(name = "CHAT_ID")
-    String chatId;
+    @Column(name = "USER_ID")
+    String userId;
 
     @Column(name = "EVENT_TYPE")
     String eventType;

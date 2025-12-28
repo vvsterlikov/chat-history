@@ -4,5 +4,5 @@ import lombok.Value;
 
 @Value
 public class HistoryRequest {
-    String clientId;
+    String userId;
 }
