@@ -6,21 +6,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
-@Builder
-@RequiredArgsConstructor
 @Getter
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "EVENT")
 public class EventEntity {
     @Id
     private Long id;
 
     @Column(name = "USER_ID")
-    String userId;
+    private String userId;
 
     @Column(name = "EVENT_TYPE")
-    String eventType;
+    private String eventType;
 
     @Column(name = "MESSAGE")
-    String message;
+    private String message;
 }
