@@ -1,0 +1,42 @@
+replicaCount: 1
+
+image:
+  repository: chat-history
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "100m"
+    memory: "256Mi"
+
+env:
+  - name: SPRING_PROFILES_ACTIVE
+    value: "dev"
+
+probes:
+  liveness:
+    path: /actuator/health/liveness
+    initialDelaySeconds: 30
+    periodSeconds: 10
+  readiness:
+    path: /actuator/health/readiness
+    initialDelaySeconds: 10
+    periodSeconds: 5
+
+ingress:
+  enabled: false
+  className: ""
+  hosts:
+    - host: chat-history.local
+      paths:
+        - path: /
+          pathType: Prefix
